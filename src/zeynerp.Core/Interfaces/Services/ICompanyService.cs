@@ -5,7 +5,7 @@ namespace zeynerp.Core.Interfaces.Services
 {
     public interface ICompanyService
     {
-        Task<CompanyDto> CreateCompanyAsync(string companyName);
+        Task<CompanyDto> CreateCompanyAsync(Company company);
         Task<UserInvitation> InviteUserAsync(int companyId, string email);
     }
 }

@@ -17,14 +17,29 @@ namespace zeynerp.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<CompanyDto> CreateCompanyAsync(string companyName)
+        public async Task<CompanyDto> CreateCompanyAsync(Company company)
         {
-            await _unitOfWork.CompanyRepository.AddAsync(_mapper.Map<Company>(companyName));
+            await _unitOfWork.CompanyRepository.AddAsync(_mapper.Map<Company>(company));
+            return _mapper.Map<CompanyDto>(company);
         }
 
-        public Task<UserInvitation> InviteUserAsync(int companyId, string email)
+        public async Task<UserInvitation> InviteUserAsync(int companyId, string email)
         {
-            throw new NotImplementedException();
+            var company = await _unitOfWork.CompanyRepository.GetByIdAsync(companyId);
+            if (company == null)
+            
+                throw new Exception(nameof(Company));
+            
+            var invitation = new UserInvitation
+            {
+                CompanyId = companyId,
+                Email = email,
+                Token = Guid.NewGuid().ToString(),
+                CreatedDate = DateTime.Now,
+                IsAccepted = false
+            };
+
+            await _unitOfWork.CompanyRepository.AddInvitationAsync(invitation);
         }
     }
 }

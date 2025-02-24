@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("zeynerp.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+af5132ddc994a64bcdc961e397201b7d9ca0aaa2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6e8bc16eb30db26f323873d3edffcb2640094ceb")]
 [assembly: System.Reflection.AssemblyProductAttribute("zeynerp.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("zeynerp.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
